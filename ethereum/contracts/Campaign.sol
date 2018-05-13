@@ -70,5 +70,18 @@ contract Campaign{
         
         
     } 
+     function getSummary() public view returns(uint,uint,uint,uint,address){
+        address myAddress=this;
+        return (
+            uint(minimumContribution),
+            uint(myAddress.balance),
+            uint(requests.length),
+            uint(approversCount),
+            manager
+        );
+    }
+    function getRequestsCount() public view returns(uint){
+        return requests.length;
+    }
  
 }
