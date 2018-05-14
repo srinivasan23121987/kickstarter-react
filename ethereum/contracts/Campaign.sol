@@ -35,7 +35,7 @@ contract Campaign{
     }
     function createRequest(string description, uint value,address recipient) public restricted
     {
-        // require(contributors[msg.sender]);
+       require(contributors[msg.sender]);
         Request memory req=Request({
         description:description,
         value:value,
